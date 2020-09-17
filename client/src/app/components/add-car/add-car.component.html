@@ -1,0 +1,33 @@
+<div>
+  <h3>Add new car data</h3>
+  <form class="form" #carForm="ngForm" (ngSubmit)="onSubmit()">
+    <label
+      >Owner name:
+      <label class="red-text">*</label>
+    </label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="name"
+      placeholder="Add your name"
+      required
+    />
+    <label
+      >Car plate number:
+      <label class="red-text">*</label>
+    </label>
+    <input
+      type="number"
+      name="number"
+      [(ngModel)]="number"
+      placeholder="Add plate number"
+      required
+    />
+    <input
+      type="submit"
+      value="Submit"
+      class="btn"
+      [disabled]="!carForm.valid"
+    />
+  </form>
+</div>

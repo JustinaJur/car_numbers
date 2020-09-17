@@ -14,6 +14,7 @@ getPlates = async (req, res) => {
 getPlate = async (req, res) => {
   try {
     const { id } = req.params;
+
     const plate = await pool.query(
       "SELECT * FROM cars_numbers WHERE plate_number = $1",
       [id]
@@ -27,6 +28,7 @@ getPlate = async (req, res) => {
 addPlate = async (req, res) => {
   try {
     const { number, name } = req.body;
+
     const newPlate = await pool.query(
       "INSERT INTO cars_numbers(plate_number, owner_name) VALUES($1, $2)",
       [number, name]
@@ -56,6 +58,7 @@ updatePlate = async (req, res) => {
 deletePlate = async (req, res) => {
   try {
     const { id } = req.params;
+
     const deletePlate = await pool.query(
       "DELETE from cars_numbers WHERE plate_number = $1",
       [id]

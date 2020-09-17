@@ -1,0 +1,23 @@
+<p>car works!</p>
+<div>
+  <form class="form" #carForm="ngForm" (ngSubmit)="updateCar()">
+    <h4>Car plate number: {{ id }}</h4>
+    <label
+      >Change car onwer name:
+      <label class="red-text">*</label>
+    </label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="name"
+      placeholder="Change car onwer name"
+      required
+    />
+    <input
+      type="submit"
+      value="Submit"
+      class="btn"
+      [disabled]="!carForm.valid"
+    />
+  </form>
+</div>

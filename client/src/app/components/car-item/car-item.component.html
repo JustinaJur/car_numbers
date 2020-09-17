@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <div class="row">
+          <app-add-car (addCar)="addCar($event)"></app-add-car>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <div class="row">
+          <table class="responsive-table highlight">
+            <thead>
+              <tr>
+                <th>Owner name</th>
+                <th>Plate number</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr *ngFor="let car of cars">
+              <td>{{ car.owner_name }}</td>
+              <td>{{ car.plate_number }}</td>
+
+              <td>
+                <nav>
+                  <a
+                    [routerLink]="['/car', car.plate_number]"
+                    class="action-btn"
+                    (click)="updateCar(car)"
+                  >
+                    <i class="material-icons">edit</i>
+                  </a>
+                </nav>
+              </td>
+              <td>
+                <a class="action-btn" (click)="deleteCar(car.plate_number)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
