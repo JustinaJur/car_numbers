@@ -11,13 +11,18 @@
       [(ngModel)]="name"
       placeholder="Add your name"
       required
+      maxlength="100"
+      minlength="1"
     />
     <label
       >Car plate number:
       <label class="red-text">*</label>
     </label>
     <input
-      type="number"
+      type="text"
+      maxlength="6"
+      minlength="6"
+      pattern="^[a-zA-Z0-9]+$"
       name="number"
       [(ngModel)]="number"
       placeholder="Add plate number"

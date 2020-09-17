@@ -18,6 +18,8 @@
               <tr>
                 <th>Owner name</th>
                 <th>Plate number</th>
+                <th>Update</th>
+                <th>Delete</th>
                 <th></th>
               </tr>
             </thead>
@@ -26,15 +28,9 @@
               <td>{{ car.plate_number }}</td>
 
               <td>
-                <nav>
-                  <a
-                    [routerLink]="['/car', car.plate_number]"
-                    class="action-btn"
-                    (click)="updateCar(car)"
-                  >
-                    <i class="material-icons">edit</i>
-                  </a>
-                </nav>
+                <a [routerLink]="['/car', car.plate_number]" class="action-btn">
+                  <i class="material-icons">edit</i>
+                </a>
               </td>
               <td>
                 <a class="action-btn" (click)="deleteCar(car.plate_number)">
