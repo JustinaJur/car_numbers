@@ -12,6 +12,7 @@ declare var M: any;
 })
 export class CarItemComponent implements OnInit {
   cars: Car[];
+  car: Car;
   constructor(private carService: CarService, private router: Router) {}
 
   ngOnInit(): void {
@@ -28,10 +29,9 @@ export class CarItemComponent implements OnInit {
     if (confirm('Do you really want to delete this car data?') == true) {
       this.carService.deleteCar(number).subscribe((car) => {
         this.getCars();
-        M.toast({ html: 'Deleted successfully', classes: 'rounded' });
+        M.toast({ html: 'Data deleted', classes: 'rounded' });
       });
     }
-    //this.router.navigate(['/']);
   }
 
   addCar(car: Car) {
@@ -40,19 +40,6 @@ export class CarItemComponent implements OnInit {
     });
     this.getCars();
     M.toast({ html: 'Data saved', classes: 'rounded' });
-    this.router.navigate(['/']);
+    location.reload();
   }
-
-  // setClasses() {
-  //   let classes = {
-  //     'is-complete': true,
-  //   };
-
-  //   // console.log(this.car.name);
-  //   return classes;
-  // }
-
-  // change(e) {
-  //   console.log(e);
-  // }
 }

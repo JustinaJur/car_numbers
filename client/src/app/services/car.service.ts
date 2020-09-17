@@ -21,8 +21,8 @@ export class CarService {
     return this.http.get<Car[]>(this.carsUrl);
   }
 
-  getCar(name: string): Observable<Car> {
-    return this.http.get<Car>(`${this.carsUrl}/${name}`);
+  getCar(number: string): Observable<Car> {
+    return this.http.get<Car>(`${this.carsUrl}/${number}`);
   }
 
   addCar(car: Car): Observable<Car> {
@@ -34,7 +34,7 @@ export class CarService {
     return this.http.put<Car>(url, car, httpOptions);
   }
 
-  deleteCar(number: number): Observable<Car[]> {
-    return this.http.delete<Car[]>(`${this.carsUrl}/${number}`);
+  deleteCar(number: number): Observable<Car> {
+    return this.http.delete<Car>(`${this.carsUrl}/${number}`);
   }
 }

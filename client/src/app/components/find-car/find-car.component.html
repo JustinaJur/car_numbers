@@ -1,0 +1,29 @@
+<div class="col s12">
+  <div class="card">
+    <div class="card-content">
+      <div class="row">
+        <h4>Find car owner</h4>
+        <form class="form" #carForm="ngForm" (ngSubmit)="findCar()">
+          <label>Find car owner by plate number: </label>
+          <input
+            type="text"
+            maxlength="6"
+            minlength="6"
+            pattern="^[a-zA-Z0-9]+$"
+            name="number"
+            [(ngModel)]="number"
+            placeholder="Enter plate number"
+            required
+          />
+          <input
+            type="submit"
+            value="Find Car"
+            class="btn"
+            [disabled]="!carForm.valid"
+          />
+        </form>
+        <h4 *ngIf="number !== ''">{{ name }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

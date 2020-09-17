@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { CarItemComponent } from './components/car-item/car-item.component';
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { CarComponent } from './components/pages/car/car.component';
+import { FindCarComponent } from './components/find-car/find-car.component';
 
 @NgModule({
-  declarations: [AppComponent, CarItemComponent, AddCarComponent, CarComponent],
+  declarations: [AppComponent, CarItemComponent, AddCarComponent, CarComponent, FindCarComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

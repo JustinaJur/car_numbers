@@ -40,7 +40,6 @@ addPlate = async (req, res) => {
 };
 
 updatePlate = async (req, res) => {
-  console.log(req);
   try {
     const { id } = req.params;
     const { name } = req.body;
