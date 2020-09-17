@@ -1,0 +1,6 @@
+CREATE DATABASE cars
+
+CREATE TABLE cars_numbers(
+plate_number SERIAL PRIMARY KEY UNIQUE NOT NULL,
+owner_name VARCHAR(100) NOT NULL
+) 
